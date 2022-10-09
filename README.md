@@ -45,7 +45,7 @@ Suggestions always welcome, possibly untestet as I don't have the resources to b
 
 Feel free to fork and contribute to the project
 
-# I have a crippling coffee addiction
+# I have a coffee addiction
 
 And you can help!
 
