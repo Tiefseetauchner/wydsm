@@ -1,0 +1,23 @@
+{
+    "name": "WYDSM",
+    "version": "0.1.0",
+    "description": "\"What you doin, steper motor\" wants to be the one and only stepper motor driver for everyone",
+    "keywords": "motor, stepper motor, driver",
+    "repository":
+    {
+      "type": "git",
+      "url": "https://github.com/tiefseetauchner/wydsm.git"
+    },
+    "authors":
+    [
+      {
+        "name": "Lena Richards",
+        "maintainer": true
+      }
+    ],
+    "license": "MIT",
+    "homepage": "github.com/tiefseetauchner/wydsm",
+    "frameworks": "espidf",
+    "platforms": "*"
+  }
+  
