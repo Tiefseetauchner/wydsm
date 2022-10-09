@@ -4,14 +4,14 @@
 #define STEPDIR_CLOCKWISE 0
 #define STEPDIR_COUNTERCLOCKWISE 1
 
-#define MICROSTEP_1 1
-#define MICROSTEP_2 2
-#define MICROSTEP_4 4
-#define MICROSTEP_8 8
-#define MICROSTEP_16 16
+#define MICROSTEP_1 0
+#define MICROSTEP_2 1
+#define MICROSTEP_4 2
+#define MICROSTEP_8 3
+#define MICROSTEP_16 4
 // No driver capable of 32/64 microsteps has been implemented yet
-// #define MICROSTEP_32 32
-// #define MICROSTEP_64 64
+// #define MICROSTEP_32 5
+// #define MICROSTEP_64 6
 
 class DriverBase
 {
@@ -26,6 +26,8 @@ public:
     virtual void turn(float angle);
     virtual void turn(float angle, int direction);
     virtual void turn(float angle, int direction, int duration);
+
+    virtual void init();
 
     int direction();
     void setDirection(int direction);
