@@ -27,7 +27,7 @@ public:
     virtual void turn(float angle, int direction);
     virtual void turn(float angle, int direction, int duration);
 
-    virtual void init();
+    virtual void initialize();
 
     int direction();
     void setDirection(int direction);

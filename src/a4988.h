@@ -7,41 +7,41 @@ class A4988 : DriverBase
 {
 public:
     A4988(gpio_num_t stepPin,
-        gpio_num_t directionPin);
+          gpio_num_t directionPin);
 
     A4988(gpio_num_t stepPin,
-        gpio_num_t directionPin,
-        int microsteppingMode);
+          gpio_num_t directionPin,
+          int microsteppingMode);
 
     A4988(gpio_num_t stepPin,
-        gpio_num_t directionPin,
-        gpio_num_t enablePin,
-        gpio_num_t sleepPin,
-        gpio_num_t resetPin,
-        gpio_num_t ms1Pin,
-        gpio_num_t ms2Pin,
-        gpio_num_t ms3Pin);
+          gpio_num_t directionPin,
+          gpio_num_t enablePin,
+          gpio_num_t sleepPin,
+          gpio_num_t resetPin,
+          gpio_num_t ms1Pin,
+          gpio_num_t ms2Pin,
+          gpio_num_t ms3Pin);
 
     A4988(gpio_num_t stepPin,
-        gpio_num_t directionPin,
-        gpio_num_t enablePin,
-        gpio_num_t sleepPin,
-        gpio_num_t resetPin,
-        gpio_num_t ms1Pin,
-        gpio_num_t ms2Pin,
-        gpio_num_t ms3Pin,
-        int microsteppingMode);
+          gpio_num_t directionPin,
+          gpio_num_t enablePin,
+          gpio_num_t sleepPin,
+          gpio_num_t resetPin,
+          gpio_num_t ms1Pin,
+          gpio_num_t ms2Pin,
+          gpio_num_t ms3Pin,
+          int microsteppingMode);
 
     void setPins(gpio_num_t stepPin, gpio_num_t directionPin);
 
     void setPins(gpio_num_t stepPin,
-        gpio_num_t directionPin,
-        gpio_num_t enablePin,
-        gpio_num_t sleepPin,
-        gpio_num_t resetPin,
-        gpio_num_t ms1Pin,
-        gpio_num_t ms2Pin,
-        gpio_num_t ms3Pin);
+                 gpio_num_t directionPin,
+                 gpio_num_t enablePin,
+                 gpio_num_t sleepPin,
+                 gpio_num_t resetPin,
+                 gpio_num_t ms1Pin,
+                 gpio_num_t ms2Pin,
+                 gpio_num_t ms3Pin);
 
     void setStepPin(gpio_num_t pin);
     void setDirectionPin(gpio_num_t pin);
@@ -55,6 +55,19 @@ public:
     void setMicrosteppingMode(int mode);
 
     void updateMicrostepping();
+
+    void stepOnce();
+    void stepOnce(int direction);
+
+    void step(int times);
+    void step(int times, int direction);
+    void step(int times, int direction, int duration);
+
+    void turn(float angle);
+    void turn(float angle, int direction);
+    void turn(float angle, int direction, int duration);
+
+    void initialize();
 
 private:
     gpio_num_t stepPin_;

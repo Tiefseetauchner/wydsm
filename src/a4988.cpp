@@ -119,7 +119,36 @@ void A4988::setMicrosteppingMode(int mode)
 
 void A4988::updateMicrostepping()
 {
+    #ifdef ESP_PLATFORM
     gpio_set_level(ms1Pin_, microstepLookup[microsteppingMode_][0]);
     gpio_set_level(ms1Pin_, microstepLookup[microsteppingMode_][1]);
     gpio_set_level(ms1Pin_, microstepLookup[microsteppingMode_][2]);
+    #else
+    #error No compatible framework detected
+    #endif
+}
+
+void A4988::stepOnce()
+{
+    step(1, direction_, 0);
+}
+
+void A4988::stepOnce(int direction)
+{
+    step(1, direction, 0);
+}
+
+void A4988::step(int times)
+{
+    step(times, direction_, 0);
+}
+
+void A4988::step(int times, int direction)
+{
+    step(times, direction, 0);
+}
+
+void A4988::step(int times, int direction, int duration)
+{
+    //Ugh help, now I actually have to implement something? Stupid
 }
